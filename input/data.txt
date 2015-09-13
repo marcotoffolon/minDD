@@ -1,0 +1,31 @@
+%----------- case
+1           % case id
+%----------- physical parameters
+1007.5      % rho0 [kg/m^3] water density
+1.10e-4     % alpha [K^-1]  thermal expansion coeff.
+7.71e-4     % beta [kg/g]   haline contraction coeff. 
+4180.0      % cp [J/kg/K]   water heat capacity
+1.4e-7      % DT [m^2/s]    diffusion coefficient temperature
+1.4e-9      % DS [m^2/s]    diffusion coefficient salinity 
+%----------- duration
+1000        % tend [days]   final time (approx.)
+%----------- model parameters
+0.02        % dz [m]        vertical grid step
+4           % lambdaT [-]   numerical Peclet number for temperature
+1           % sorting       0=no_sorting, 1=sorting, 2=sorting without boundary cells (is1, is2)
+%----------- boundary conditions
+1           % bcT           1=value, 2=flux(profile), 3=flux(imposed below) [temperature]
+1           % bcS           1=value, 2=flux(profile), 3=flux(imposed below) [salinity]
+%----------- initial perturbations
+1e-3        % Tpert [K]     (0=none)
+1e-4        % Spert [g/kg]  (0=none)
+%----------- options
+5           % is1           (number of fixed cells for sorting at the top)
+5           % is2           (number of fixed cells for sorting at the bottom)
+0.00        % tpause [s]    duration of pause after each plot
+1           % saveres       1=save results and figures
+%----------- imposed fluxes (if bcT=2 or bcS=2)
+17.7        % FHtop [mW/m^2]    heat flux (top)
+17.7        % FHbot [mW/m^2]    heat flux (bottom)
+8.46e-8     % FStop [g/s/m^2]   salt flux (top)
+8.46e-8     % FSbot [g/s/m^2]   salt flux (bottom)
